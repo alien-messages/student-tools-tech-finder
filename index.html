@@ -1,220 +1,85 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Tools & Tech Finder – Discover the best free apps, research tools, and AI assistants for students (updated 2025)." />
+  <title>Student Tools & Tech Finder</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f9fafb; }
+    .card { transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+  </style>
+</head>
 
-// Student Tools & Tech Finder
-// Single-file React component (Tailwind CSS classes used). Default export is the page component.
-// Instructions: Put this file in a static React app (Create React App or Vite). Tailwind should be configured
-// If you prefer to host as a static single-file on GitHub Pages, you can compile/build the project and publish the output.
+<body class="text-gray-800">
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-10 shadow">
+    <h1 class="text-4xl font-bold mb-2">🎓 Student Tools & Tech Finder</h1>
+    <p class="text-lg">Curated learning, research, AI & productivity tools — free & updated for 2025</p>
+  </header>
 
-export default function StudentToolsFinder() {
-  const tools = [
-    {
-      category: "Note-taking & Organization",
-      items: [
-        { name: "Notion", url: "https://www.notion.so/", tag: "all-in-one workspace" },
-        { name: "Microsoft OneNote", url: "https://www.onenote.com/", tag: "free & robust" },
-        { name: "Evernote", url: "https://evernote.com/", tag: "notes & web clipper" },
-        { name: "Obsidian", url: "https://obsidian.md/", tag: "local graph notes" },
-        { name: "Joplin", url: "https://joplinapp.org/", tag: "open-source" },
-        { name: "GoodNotes (iPad)", url: "https://www.goodnotes.com/", tag: "handwritten notes" }
-      ]
-    },
-    {
-      category: "Flashcards & Memory",
-      items: [
-        { name: "Anki", url: "https://apps.ankiweb.net/", tag: "spaced repetition" },
-        { name: "Quizlet", url: "https://quizlet.com/", tag: "flashcards & study modes" },
-        { name: "RemNote", url: "https://www.remnote.io/", tag: "knowledge + spaced repetition" }
-      ]
-    },
-    {
-      category: "Writing & Proofreading",
-      items: [
-        { name: "Grammarly", url: "https://www.grammarly.com/", tag: "grammar & style" },
-        { name: "Hemingway Editor", url: "https://hemingwayapp.com/", tag: "readability" },
-        { name: "QuillBot", url: "https://quillbot.com/", tag: "paraphrasing & summarizer" }
-      ]
-    },
-    {
-      category: "Study & Learning Platforms",
-      items: [
-        { name: "Khan Academy", url: "https://www.khanacademy.org/", tag: "free courses" },
-        { name: "Coursera", url: "https://www.coursera.org/", tag: "university courses" },
-        { name: "edX", url: "https://www.edx.org/", tag: "MOOCs & certificates" },
-        { name: "OpenStax", url: "https://openstax.org/", tag: "free textbooks" }
-      ]
-    },
-    {
-      category: "Research & Papers",
-      items: [
-        { name: "Google Scholar", url: "https://scholar.google.com/", tag: "academic search" },
-        { name: "Semantic Scholar", url: "https://www.semanticscholar.org/", tag: "AI-powered search" },
-        { name: "CORE (open access)", url: "https://core.ac.uk/", tag: "OA aggregator" },
-        { name: "Internet Archive", url: "https://archive.org/", tag: "books & media" }
-      ]
-    },
-    {
-      category: "Productivity & Task Management",
-      items: [
-        { name: "Todoist", url: "https://todoist.com/", tag: "task manager" },
-        { name: "TickTick", url: "https://ticktick.com/", tag: "calendar + tasks" },
-        { name: "Google Calendar", url: "https://calendar.google.com/", tag: "planning" }
-      ]
-    },
-    {
-      category: "AI Tools & Research Assistants",
-      items: [
-        { name: "ChatGPT (OpenAI)", url: "https://chat.openai.com/", tag: "general AI assistant" },
-        { name: "Perplexity AI", url: "https://www.perplexity.ai/", tag: "AI search & summarization" },
-        { name: "Elicit", url: "https://elicit.org/", tag: "research assistant" },
-        { name: "Google NotebookLM", url: "https://ai.google/notebooklm", tag: "note-centric AI" }
-      ]
-    },
-    {
-      category: "Coding & CS Learning",
-      items: [
-        { name: "GitHub", url: "https://github.com/", tag: "code hosting" },
-        { name: "Replit", url: "https://replit.com/", tag: "in-browser coding" },
-        { name: "LeetCode", url: "https://leetcode.com/", tag: "coding practice" },
-        { name: "freeCodeCamp", url: "https://www.freecodecamp.org/", tag: "free curriculum" }
-      ]
-    },
-    {
-      category: "PDF & Document Tools",
-      items: [
-        { name: "Adobe Acrobat (online)", url: "https://acrobat.adobe.com/", tag: "PDF tools" },
-        { name: "Kami", url: "https://www.kamiapp.com/", tag: "annotation & PDF" },
-        { name: "Smallpdf", url: "https://smallpdf.com/", tag: "PDF utilities" }
-      ]
-    },
-    {
-      category: "Design & Presentation",
-      items: [
-        { name: "Canva", url: "https://www.canva.com/", tag: "design & presentations" },
-        { name: "Figma", url: "https://www.figma.com/", tag: "UI & collaboration" }
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
-      <header className="max-w-6xl mx-auto p-6 flex items-center gap-4">
-        <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-sky-600 to-indigo-500 flex items-center justify-center text-white font-bold text-2xl">ST</div>
-        <div>
-          <h1 className="text-2xl font-extrabold">Student Tools & Tech Finder</h1>
-          <p className="text-slate-600">Curated tools & links for students — note-taking, research, AI assistants, coding, PDFs and more (updated 2025).</p>
-        </div>
-      </header>
-
-      <main className="max-w-6xl mx-auto p-6 grid grid-cols-3 gap-6">
-        <section className="col-span-3 md:col-span-2">
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <div className="flex items-center gap-4">
-              <div className="flex-1">
-                <h2 className="text-lg font-semibold">Search tools</h2>
-                <p className="text-slate-500 text-sm">Quick search (type a tool name or category)</p>
-              </div>
-              <div className="w-60">
-                <input id="search" placeholder="Search tools, e.g. Notion, Anki" className="w-full border rounded-lg px-3 py-2" />
-              </div>
-            </div>
-
-            <div className="mt-6 space-y-6">
-              {tools.map((cat) => (
-                <div key={cat.category} className="pb-4 border-b last:border-b-0">
-                  <h3 className="text-md font-semibold">{cat.category}</h3>
-                  <p className="text-sm text-slate-500">{cat.items.length} recommended</p>
-
-                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {cat.items.map((t) => (
-                      <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl hover:shadow-lg transition bg-gradient-to-r from-white to-slate-50">
-                        <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center font-semibold text-slate-700">{t.name.split(' ').map(s => s[0]).slice(0,2).join('')}</div>
-                        <div>
-                          <div className="font-medium">{t.name}</div>
-                          <div className="text-sm text-slate-500">{t.tag}</div>
-                        </div>
-                        <div className="ml-auto text-xs text-sky-600 font-semibold">Open</div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 text-sm text-slate-500">
-              <p>Notes: This directory links to official sites. Use the search field to quickly find a tool. Replace or augment links with your own affiliate links or tracking (disclosed to users) if you monetize.</p>
-            </div>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-sm">
-              <h4 className="font-semibold">Top Keywords (SEO-ready)</h4>
-              <ul className="text-slate-600 text-sm mt-2 space-y-1">
-                <li>best student apps 2025</li>
-                <li>study tools for college students</li>
-                <li>note taking app for students</li>
-                <li>best AI tools for students</li>
-                <li>free textbooks online</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-4 rounded-xl shadow-sm">
-              <h4 className="font-semibold">Monetization tips</h4>
-              <ol className="text-slate-600 text-sm mt-2 list-decimal list-inside space-y-1">
-                <li>Use affiliate links for tools (Grammarly, Notion, Coursera) with clear disclosures.</li>
-                <li>Place approved ad units (AdSense) in high-visibility but non-intrusive positions.</li>
-                <li>Create comparison posts + "best X" articles to capture buyer intent.</li>
-              </ol>
-            </div>
-          </div>
-
-        </section>
-
-        <aside className="col-span-3 md:col-span-1">
-          <div className="bg-white p-6 rounded-2xl shadow-md sticky top-6">
-            <h3 className="font-semibold">Quick Links</h3>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li><a href="#" className="text-sky-600">How to get AdSense on GitHub Pages</a></li>
-              <li><a href="#" className="text-sky-600">Affiliate disclosure template</a></li>
-              <li><a href="#" className="text-sky-600">SEO checklist for students sites</a></li>
-            </ul>
-
-            <div className="mt-5">
-              <h4 className="font-semibold">Legal & Safety</h4>
-              <p className="text-slate-500 text-sm">We link to official tools only. Avoid linking to pirated content. Keep privacy policy and disclose affiliate links.</p>
-            </div>
-
-            <div className="mt-4">
-              <h4 className="font-semibold">Get the repo</h4>
-              <p className="text-slate-500 text-sm">Clone this template and customize: <span className="font-mono text-xs bg-slate-100 px-2 py-1 rounded">github.com/yourname/student-tools-finder</span></p>
-            </div>
-
-            <div className="mt-4 bg-slate-50 p-3 rounded-lg text-sm text-slate-700">
-              <div className="font-semibold">Ad placeholder</div>
-              <div className="text-xs text-slate-500">Insert your AdSense code here (ensure content complies).</div>
-            </div>
-          </div>
-
-          <div className="mt-4 text-xs text-slate-500">Updated: 2025 • Curated links to official tools</div>
-        </aside>
-      </main>
-
-      <footer className="mt-8 border-t py-6 bg-white">
-        <div className="max-w-6xl mx-auto px-6 text-sm text-slate-600">© {new Date().getFullYear()} Student Tools & Tech Finder — Built with legal, public links. Affiliate disclosure: Some links may be affiliate links. Privacy policy and terms should be added before monetization.</div>
-      </footer>
-
-      {/* Structured data for SEO (JSON-LD) */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Student Tools & Tech Finder",
-        "url": "https://yourusername.github.io/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://yourusername.github.io/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      })}} />
-
+  <main class="max-w-6xl mx-auto p-6">
+    <div class="mb-6 text-center">
+      <input id="search" type="text" placeholder="Search tools, e.g., Notion, AI, PDF..." class="border border-gray-300 rounded-full px-4 py-2 w-2/3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
     </div>
-  );
-}
+
+    <div id="toolContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <section class="mt-10 text-gray-600">
+      <h2 class="text-2xl font-semibold mb-3">Top Keywords (SEO)</h2>
+      <ul class="list-disc ml-6">
+        <li>best student apps 2025</li>
+        <li>free AI tools for students</li>
+        <li>note-taking & study tech</li>
+        <li>productivity tools for college</li>
+        <li>free research tools online</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
+    <p>&copy; 2025 Student Tools & Tech Finder — Curated by <a href="https://github.com/alien-messages" class="text-blue-400 underline">alien-messages</a></p>
+  </footer>
+
+  <script>
+    const tools = [
+      { name: "Notion", url: "https://www.notion.so", tag: "organization" },
+      { name: "Evernote", url: "https://evernote.com", tag: "notes" },
+      { name: "Obsidian", url: "https://obsidian.md", tag: "graph notes" },
+      { name: "Grammarly", url: "https://grammarly.com", tag: "writing" },
+      { name: "Khan Academy", url: "https://khanacademy.org", tag: "courses" },
+      { name: "Google Scholar", url: "https://scholar.google.com", tag: "research" },
+      { name: "ChatGPT", url: "https://chat.openai.com", tag: "AI" },
+      { name: "Perplexity AI", url: "https://perplexity.ai", tag: "AI assistant" },
+      { name: "GitHub", url: "https://github.com", tag: "coding" },
+      { name: "Canva", url: "https://www.canva.com", tag: "design" },
+      { name: "Figma", url: "https://www.figma.com", tag: "UI design" },
+      { name: "Smallpdf", url: "https://smallpdf.com", tag: "PDF tools" },
+    ];
+
+    const container = document.getElementById("toolContainer");
+    const search = document.getElementById("search");
+
+    function display(list) {
+      container.innerHTML = "";
+      list.forEach(t => {
+        const card = document.createElement("a");
+        card.href = t.url;
+        card.target = "_blank";
+        card.className = "card bg-white p-6 rounded-xl border text-center hover:shadow-lg";
+        card.innerHTML = `<h3 class='text-xl font-semibold mb-2 text-blue-600'>${t.name}</h3><p class='text-gray-500 text-sm'>${t.tag}</p>`;
+        container.appendChild(card);
+      });
+    }
+
+    search.addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+      const filtered = tools.filter(t => t.name.toLowerCase().includes(q) || t.tag.toLowerCase().includes(q));
+      display(filtered);
+    });
+
+    display(tools);
+  </script>
+</body>
+</html>
